@@ -80,4 +80,3 @@ python main.py
 
 ---
 *Created by Wang Chi-Hsien for the AWS Term Project.*
-```
