@@ -3,7 +3,7 @@
 
 ### `README.md`
 
-
+```markdown
 # 混合 NTN-地面網路中基於預測性雙連結啟動之切換機制
 
 本儲存庫 (Repository) 包含期末專題 **「混合 NTN-地面網路中基於預測性雙連結啟動之切換機制：針對突發遮蔽的魯棒性空間 AI 方法」** 的完整模擬程式碼。
@@ -32,13 +32,15 @@
 
 ## 安裝說明 (Installation)
 
-1.  複製此專案：
+1.  **複製此專案**：
+
     ```bash
     git clone https://github.com/Wang-Chi-Hsien/Predictive-DC-Handover-NTN.git
     cd Predictive-DC-Handover-NTN
     ```
 
-2.  安裝相依套件：
+2.  **安裝相依套件**：
+
     ```bash
     pip install -r requirements.txt
     ```
