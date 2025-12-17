@@ -1,14 +1,9 @@
 
----
-
-### `README.md`
-
-```markdown
 # 混合 NTN-地面網路中基於預測性雙連結啟動之切換機制
 
 本儲存庫 (Repository) 包含期末專題 **「混合 NTN-地面網路中基於預測性雙連結啟動之切換機制：針對突發遮蔽的魯棒性空間 AI 方法」** 的完整模擬程式碼。
 
-## 專案概述 (Project Overview)
+## 📌 專案概述 (Project Overview)
 
 在未來的 5G/6G 混合網路架構中，車輛將優先連接 **地面網路 (Terrestrial Networks, TN)** 以獲取高頻寬與低延遲，並使用 **非地面網路 (NTN/衛星)** 作為訊號覆蓋的備援。然而，在 **山區道路 (Mountainous Terrain)** 行駛時，車輛常面臨 **突發性遮蔽 (Sudden Blockage)**，地面訊號會因地形阻擋而瞬間中斷。
 
@@ -20,7 +15,7 @@
 3.  **無縫切換：** 觸發 **先連後斷 (Make-Before-Break)** 機制，達成 **零中斷 (Zero/Near-Zero Interruption)** 的目標。
 4.  **抗噪聲訓練：** 加入 **雜訊增強 (Noise Augmentation)** 技術，即使在 **15公尺 GPS 誤差** 下仍能準確運作。
 
-## 核心功能 (Key Features)
+## 🚀 核心功能 (Key Features)
 
 *   **突發遮蔽模擬：** 建立山區道路環境，模擬訊號「懸崖式」下跌的情境。
 *   **雙連結邏輯 (Dual-Connectivity)：** 模擬連線狀態轉移：僅地面 -> 建立衛星連線中 -> 雙連結啟動。
@@ -30,7 +25,7 @@
     *   **Baseline 2:** 時序 AI 預測 (Time-Series AI) - 無法預測突發地形變化。
     *   **Proposed:** 空間無線環境地圖 (Spatial REM) - 主動式預測。
 
-## 安裝說明 (Installation)
+## 🛠️ 安裝說明 (Installation)
 
 1.  **複製此專案**：
 
@@ -45,13 +40,12 @@
     pip install -r requirements.txt
     ```
 
-## 使用方法 (Usage)
+## 🏃 使用方法 (Usage)
 
 執行主模擬程式：
 
 ```bash
 python main.py
-```
 
 程式將執行以下步驟：
 1.  生成合成環境數據 (包含訓練集與測試集)。
