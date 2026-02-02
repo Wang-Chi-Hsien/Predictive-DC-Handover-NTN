@@ -1,9 +1,87 @@
 
+# Predictive Dual-Connectivity Activation Handover Mechanism in Hybrid NTN-Terrestrial Networks
+
+This repository contains the complete simulation code for the term project **"Predictive Dual-Connectivity Activation Handover in Hybrid NTN-TN Networks: A Robust Spatial AI Approach for Sudden Blockage."**
+
+## Project Overview
+
+In future 5G/6G hybrid network architectures, vehicles will prioritize **Terrestrial Networks (TN)** for high bandwidth and low latency, while utilizing **Non-Terrestrial Networks (NTN/Satellite)** as backup coverage. However, when driving in **Mountainous Terrain**, vehicles frequently encounter **Sudden Blockage**, where terrestrial signals are instantaneously interrupted due to topographical obstructions.
+
+Traditional **Reactive** handover mechanisms (e.g., Standard Conditional Handover, CHO) fail to switch to the satellite before the signal is lost. The physical layer handover process (including T310 + T311 + RRC Re-establishment) typically takes approximately **3 seconds**, leading to communication service interruptions.
+
+This project proposes a **Robust Spatial AI (Spatial XGBoost)** approach with the following characteristics:
+
+1.  **Spatial Context Utilization:** Uses location and geometric information rather than relying on historical signal trends.
+2.  **Proactive Prediction:** Capable of making predictions **5 seconds** before a blockage occurs.
+3.  **Seamless Handover:** Triggers a **Make-Before-Break** mechanism to achieve the goal of **Zero/Near-Zero Interruption**.
+4.  **Noise-Resilient Training:** Incorporates **Noise Augmentation** techniques to operate accurately even under **15m GPS error**.
+
+## Key Features
+
+* **Sudden Blockage Simulation:** Establishes a mountainous road environment to simulate "cliff-like" signal drops.
+* **Dual-Connectivity (DC) Logic:** Simulates connection state transitions: `TN Only` -> `Establishing Satellite Link` -> `Dual-Connectivity Active`.
+* **Robustness Test:** Injects Gaussian Noise to simulate GPS drift issues common in canyon terrains.
+* **Comparative Analysis:**
+    * **Baseline 1:** Standard Conditional Handover (Standard CHO) - Reactive, reacts too late.
+    * **Baseline 2:** Time-Series AI Prediction (Time-Series AI) - Unable to predict sudden topographical changes.
+    * **Proposed:** Spatial Radio Environment Map (Spatial REM) - Proactive prediction.
+
+## Installation
+
+1.  **Clone the repository**
+
+    ```bash
+    git clone [https://github.com/Wang-Chi-Hsien/Predictive-DC-Handover-NTN.git](https://github.com/Wang-Chi-Hsien/Predictive-DC-Handover-NTN.git)
+    cd Predictive-DC-Handover-NTN
+    ```
+
+2.  **Install dependencies**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+Run the main simulation program:
+
+```bash
+python main.py
+```
+1. The program will execute the following steps:
+2. Generate synthetic environmental data (including training and testing sets).
+3. Train Time-Series and Spatial AI models.
+4. Execute Mobility Simulation.
+5. Output quantitative results (data) to the terminal.
+6. Generate and display two visualization charts (Signal Analysis and Connection States).
+
+## Results
+
+### Quantitative Comparison (Simulation Condition: 15m GPS Error)
+
+| Method | Interruption Duration | Status | Note |
+| :--- | :--- | :--- | :--- |
+| **Time-Series AI** | ~9.60 sec | **Failed** | Unable to predict network topology changes |
+| **Standard CHO** | ~1.80 sec | **Failed** | Reactive mechanism triggers too late |
+| **Proposed Spatial** | **~0.60 sec** | **Success** | Achieves Near-Zero Interruption |
+
+### Visualizations
+
+* **Figure 1:** Shows that the **Proposed Method (Blue Star)** triggers the handover *before* the signal drops, whereas other baseline methods react only after the signal has dropped.
+* **Figure 2:** Demonstrates that the proposed method successfully establishes the satellite link (State 2) before entering the blockage zone, ensuring **Service Continuity**.
+
+## References
+
+1. **S. Mondal et al.**, "Intelligent Handover Orchestration in Beyond 5G and Urban V2X Dual Connectivity Networks: A Deep Reinforcement Learning Approach," *IEEE Access*, 2025.
+2. **3GPP TR 38.811**, "Study on New Radio (NR) to support Non-Terrestrial Networks (NTN)."
+
+---
+
 # 混合 NTN-地面網路中基於預測性雙連結啟動之切換機制
 
 本儲存庫 (Repository) 包含期末專題 **「混合 NTN-地面網路中基於預測性雙連結啟動之切換機制：針對突發遮蔽的魯棒性空間 AI 方法」** 的完整模擬程式碼。
 
-## 📌 專案概述 (Project Overview)
+## 專案概述 (Project Overview)
 
 在未來的 5G/6G 混合網路架構中，車輛將優先連接 **地面網路 (Terrestrial Networks, TN)** 以獲取高頻寬與低延遲，並使用 **非地面網路 (NTN/衛星)** 作為訊號覆蓋的備援。然而，在 **山區道路 (Mountainous Terrain)** 行駛時，車輛常面臨 **突發性遮蔽 (Sudden Blockage)**，地面訊號會因地形阻擋而瞬間中斷。
 
@@ -15,7 +93,7 @@
 3.  **無縫切換：** 觸發 **先連後斷 (Make-Before-Break)** 機制，達成 **零中斷 (Zero/Near-Zero Interruption)** 的目標。
 4.  **抗噪聲訓練：** 加入 **雜訊增強 (Noise Augmentation)** 技術，即使在 **15公尺 GPS 誤差** 下仍能準確運作。
 
-## 🚀 核心功能 (Key Features)
+## 核心功能 (Key Features)
 
 *   **突發遮蔽模擬：** 建立山區道路環境，模擬訊號「懸崖式」下跌的情境。
 *   **雙連結邏輯 (Dual-Connectivity)：** 模擬連線狀態轉移：僅地面 -> 建立衛星連線中 -> 雙連結啟動。
@@ -25,7 +103,7 @@
     *   **Baseline 2:** 時序 AI 預測 (Time-Series AI) - 無法預測突發地形變化。
     *   **Proposed:** 空間無線環境地圖 (Spatial REM) - 主動式預測。
 
-## 🛠️ 安裝說明 (Installation)
+## 安裝說明 (Installation)
 
 1.  **複製此專案**：
 
@@ -40,7 +118,7 @@
     pip install -r requirements.txt
     ```
 
-## 🏃 使用方法 (Usage)
+## 使用方法 (Usage)
 
 執行主模擬程式：
 
